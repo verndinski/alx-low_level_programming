@@ -3,7 +3,7 @@
 /**
  * main - Entry point
  *
- * Return: Always 0 (success)
+ * Return: Always 0 (Success)
  */
 int main(void)
 {
@@ -14,7 +14,7 @@ int main(void)
 		if (c != 'q' && c != 'e')
 			putchar(c);
 
-			c++;
+		c++;
 	}
 	putchar('\n');
 
