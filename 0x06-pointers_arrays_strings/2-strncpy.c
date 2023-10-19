@@ -2,7 +2,6 @@
 
 /**
  * _strncpy - function to copy string
- *
  * @dest: string to copy to
  * @src: string to copy from
  * @n: number of chars to copy
