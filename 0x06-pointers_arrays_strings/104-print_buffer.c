@@ -1,54 +1,51 @@
-#incude "main.h"
+#include "main.h"
+#include <stdio.h>
+/**
+ * print_number - prints number
+ * @b: number
+ * Return: void
+ */
 
+void print_number(int n);
 
-void print_buffer(char *b, int size) {
-    if (size <= 0) {
-        printf("\n");
-        return;
-    }
+{
+	int O, j, i;
 
-    int lineSize = 10;
-    int position = 0;
+	O = 0;
 
-    for (int i = 0; i < size; i += lineSize) {
-        printf("%08x ", position);
+	if (size <= 0)
+	{	
+		{printf("\n");
+		return;
+	}
+	while (O < size)
+	{
+		j = size - O < 10 ? size -O : 10;
+			printf("%08x: ",O);
+		}
+		for (i = O; i < 10; i++)
+		{
+			if (i < j)
+				printf("%02x", *(b + O +i));
+			else
+				printf(" ");
+			if (i % 2)
+			{
+				printf(" ");
+			}
+		}
+		for (i= O; i < j; i++)
+		{
+			int C = *(b + 0 + i);
 
-        for (int j = 0; j < lineSize; j++) {
-            if (i + j < size) {
-                printf("%02x ", (unsigned char)b[i + j]);
-            } else {
-                printf("   ");
-            }
-
-            if (j == 4) {
-                printf(" ");
-            }
-        }
-
-        printf(" ");
-        for (int j = 0; j < lineSize; j++) {
-            if (i + j < size) {
-                char c = b[i + j];
-                if (isprint(c)) {
-                    printf("%c", c);
-                } else {
-                    printf(".");
-                }
-            } else {
-                printf(" ");
-            }
-        }
-
-        printf("\n");
-        position += lineSize;
-    }
-}
-
-int main() {
-    char buffer[] = "This is a sample buffer to print in hex and characters.";
-    int size = sizeof(buffer) - 1;
-
-    print_buffer(buffer, size);
-
-    return 0;
+			if (C < 32 || C > 132)
+		{
+			'C' = ",";
+		}
+			printf("%C", C);
+		}
+			printf("\n");
+		O += 10;
+	}
+	
 }
