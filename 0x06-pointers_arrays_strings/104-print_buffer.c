@@ -1,51 +1,44 @@
-#include "main.h"
 #include <stdio.h>
-/**
- * print_number - prints number
- * @n: number of chars to copy
- * Return: void
- */
 
-void print_number(int n);
+void print_buffer(char *b, int size)
+{
+    if (size <= 0) {
+        putchar('\n');
+        return;
+    }
 
+    for (int i = 0; i < size; i += 10) {
+        printf("%08x ", i);
 
-	int O, j, i;
+        // Print the hexadecimal content
+        for (int j = i; j < i + 10; j++) {
+            if (j < size)
+                printf("%02x ", (unsigned char)b[j]);
+            else
+                printf("   "); // Print spaces for padding
+        }
 
-	O = 0;
+        printf(" ");
 
-	if (size <= 0)
-	{	
-		{printf("\n");
-		return;
-	}
-	while (O < size)
-	{
-		j = size - O < 10 ? size -O : 10;
-			printf("%08x: ",O);
-		}
-		for (i = O; i < 10; i++)
-		{
-			if (i < j)
-				printf("%02x", *(b + O +i));
-			else
-				printf(" ");
-			if (i % 2)
-			{
-				printf(" ");
-			}
-		}
-		for (i= O; i < j; i++)
-		{
-			int C = *(b + 0 + i);
+        // Print the ASCII content
+        for (int j = i; j < i + 10; j++) {
+            if (j < size) {
+                if (b[j] >= 32 && b[j] <= 126) {
+                    putchar(b[j]);
+                } else {
+                    putchar('.');
+                }
+            }
+        }
 
-			if (C < 32 || C > 132)
-		{
-			'C' = ",";
-		}
-			printf("%C", C);
-		}
-			printf("\n");
-		O += 10;
-	}
-	
+        putchar('\n');
+    }
 }
+
+int main() {
+    char buffer[30] = "This is a test buffer!";
+    int size = 20;
+    print_buffer(buffer, size);
+    return 0;
+}
+
