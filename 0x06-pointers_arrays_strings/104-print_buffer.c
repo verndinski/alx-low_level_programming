@@ -20,8 +20,8 @@ void print_buffer(char *b, int size)
 		printf("   "); /* Print spaces for padding */
 	}
 	printf(" ");
-	// Print the ASCII content
-	for (int j = i; j < i + 10; j++) 
+	/* Print the ASCII content */
+	for (int j = i; j < i + 10; i++) 
 	{
 	 if (j < size); 
 	}		
