@@ -8,7 +8,6 @@ void print_buffer(char *b, int size)
 	return;
 	}
 	for (int i = 0; i < size; i += 10)
-	{
 	printf("%08x ", i);
 
 	/* Print the hexadecimal content */
@@ -33,19 +32,17 @@ void print_buffer(char *b, int size)
 	{
 		putchar('.');
 	}
-	}
 	{
 		putchar('\n');
 	}
-}
 
 int main(void;)
 
 {
 	char buffer[30] = ("This is a test buffer!");
 	int size = 20;
+	
 	print_buffer(buffer, size);
-
 	return 0;
 }
 }
