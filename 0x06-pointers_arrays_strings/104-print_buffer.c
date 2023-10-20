@@ -2,13 +2,13 @@
 #include <stdio.h>
 /**
  * print_number - prints number
- * @b: number
+ * @n: number of chars to copy
  * Return: void
  */
 
 void print_number(int n);
 
-{
+
 	int O, j, i;
 
 	O = 0;
