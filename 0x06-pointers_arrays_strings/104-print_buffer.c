@@ -11,13 +11,13 @@ void print_buffer(char *b, int size)
 	{
 	printf("%08x ", i);
 
-	// Print the hexadecimal content
+	/* Print the hexadecimal content */
 	for (int j = i; j < i + 10; j++) 
 	{
 	if (j < size)
 		printf("%02x ", (unsigned char)b[j]);
 	else
-		printf("   "); // Print spaces for padding
+		printf("   "); /* Print spaces for padding */
 	}
 	printf(" ");
 	// Print the ASCII content
