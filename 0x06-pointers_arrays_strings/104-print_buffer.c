@@ -23,8 +23,8 @@ void print_buffer(char *b, int size)
 	/* Print the ASCII content */
 	for (int j = i; j < i + 10; i++)
 	{
-	if (j < size);
-	}	
+	if (j < size)
+	}
 		if (b[j] >= 32 && b[j] <= 126)
 	{
 		putchar(b[j]);
@@ -45,6 +45,7 @@ int main(void;)
 	char buffer[30] = ("This is a test buffer!");
 	int size = 20;
 	print_buffer(buffer, size);
+
 	return 0;
 }
 }
