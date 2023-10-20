@@ -7,11 +7,9 @@
  * @n: number of chars to copy
  * Return: char pointer
  */
-
 char *_strncpy(char *dest, char *src, int n)
 {	
 	int i, j;
-
 	for (i = 0; i < n; i++)
 	{
 		if (src[i] == '\0')
