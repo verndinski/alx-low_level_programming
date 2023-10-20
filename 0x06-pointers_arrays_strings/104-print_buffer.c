@@ -6,31 +6,27 @@ void print_buffer(char *b, int size)
 	if (size <= 0) 
 	{
 	putchar('\n');
-        return;									}
+	return;
+	}
 	for (int i = 0; i < size; i += 10) 
 	{
 	printf("%08x ", i);
-
-	// Print the hexadecimal content
+		// Print the hexadecimal content
 	for (int j = i; j < i + 10; j++) 
 	{
 		if (j < size)
 		printf("%02x ", (unsigned char)b[j]);
-		else
+	else
 		printf("   "); // Print spaces for padding
 	}
 
 	printf(" ");
-
-	// Print the ASCII content
+		// Print the ASCII content
 	for (int j = i; j < i + 10; j++) 
-	
 	{
-		if (j < size) 
-	  	
+		if (j < size)
 	    {
-		if (b[j] >= 32 && b[j] <= 126) 
-		
+	if (b[j] >= 32 && b[j] <= 126) 
 		{
 		putchar(b[j]);
 		} else 
