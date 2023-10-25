@@ -1,12 +1,12 @@
-void _puts_recursion(char *);
+#include "main.h"
 
 /**
- * main - check the code for Holberton School students.
+ * main - check the code
  *
  * Return: Always 0.
  */
 int main(void)
 {
-	_puts_recursion("First, solve the problem. Then, write the code");
-	return (0);
-}i
+    _puts_recursion("Puts with recursion");
+    return (0);
+}
