@@ -1,11 +1,10 @@
 #include "main.h"
+#include <stdio.h>
+#include <stdlib.h>
+#include <ctype.h>
+#include <string.h>
 
-/**
- * _isdigit - checks for a digit
- * @c: int to be checked
- * Return: 1 if c is a digit, 0 if otherwise
- */
-int _isdigit(int c)
+char *_strcat(char *dest, char *src)
 {
-	return (c >= '0' && c <= '9');
+    return strcat(dest, src);
 }
