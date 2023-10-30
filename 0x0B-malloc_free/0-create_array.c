@@ -2,26 +2,30 @@
 #include <stdlib.h>
 
 /**
- * _strdup - returns a pointer to a newly allocated space in memory,
- * which contains a copy of the string given as a parameter
+ * create_array - creates an array of chars
+ * @size: The size of the array
+ * @c: The char to fill in the array
  *
- * @str: string to duplicate
- * Return: char pointer
+ * Return: The array filled
  */
-char *_strdup(char *str)
-{
-	char *sd;
-	unsigned int size = 0, i;
 
-	if (str == NULL)
+char *create_array(unsigned int size, char c)
+{
+	unsigned int i;
+	char *s;
+
+	if (size == 0)
 		return (NULL);
-	for (i = 0; str[i] != '\0'; i++)
-		size++;
-	sd = malloc(sizeof(char) * (size + 1));
-	if (sd == NULL)
+
+	s = malloc(size * sizeof(char));
+
+	if (s == NULL)
 		return (NULL);
+
 	for (i = 0; i < size; i++)
-		sd[i] = str[i];
-	sd[size] = '\0';
-	return (sd);
+	{
+		s[i] = c;
+	}
+	
+	return (s);
 }
