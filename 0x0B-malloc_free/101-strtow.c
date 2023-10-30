@@ -2,7 +2,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-/** 
+/**
  *  print_tab - prints an array of string
  *  @tab: The array to print
  *
@@ -12,7 +12,7 @@ void print_tab(char **tab)
 {
 	int i;
 
-	for (i = 0;mtab[i] != NULL; ++i)
+	for (i = 0;tab[i] != NULL; ++i)
 	{
 		printf("%s\n", tab[i]);
 	}
@@ -35,4 +35,4 @@ int main(void)
 	}
 	print_tab(tab);
 	return (0);
-}	
+}
