@@ -1,41 +1,44 @@
 #include <stdio.h>
 #include <stdlib.h>
-#include "main.h"
 
-/**
- * The main function is the entry point of the program.
- *
- * @param argc The number of command-line arguments.
- * @param argv An array of strings representing the command-line arguments.
- * @return The exit status of the program.
- */
-
-int main(int argc, char *argv[])
-{
-	char *num1_str, *num2_str;
-	int num1, num2;
-	int result;
-
-	if (argc != 3)
-	{
-	printf("Error\n");
-	return (98);
-	}
-
-	num1_str = argv[1];
-	num2_str = argv[2];
-	if (!is_positive_integer(num1_str) || !is_positive_integer(num2_str))
-	{
-	printf("Error\n");
-	return (98);
-	}
-
-	num1 = atoi(num1_str);
-	num2 = atoi(num2_str);
-
-	result = multiply_numbers(num1, num2);
-	printf("%d\n", result);
-
-	return (0);
+int is_digit(char c) {
+    return (c >= '0' && c <= '9');
 }
 
+int main(int argc, char *argv[]) {
+    char *num1_str;
+    char *num2_str;
+    long num1, num2, result;
+    int i;
+
+    if (argc != 3) {
+        printf("Error\n");
+        return 98;
+    }
+
+    num1_str = argv[1];
+    num2_str = argv[2];
+
+    for (i = 0; num1_str[i] != '\0'; i++) {
+        if (!is_digit(num1_str[i])) {
+            printf("Error\n");
+            return 98;
+        }
+    }
+
+    for (i = 0; num2_str[i] != '\0'; i++) {
+        if (!is_digit(num2_str[i])) {
+            printf("Error\n");
+            return 98;
+        }
+    }
+
+    num1 = atol(num1_str);
+    num2 = atol(num2_str);
+
+    result = num1 * num2;
+
+    printf("%ld\n", result);
+
+    return 0;
+}
