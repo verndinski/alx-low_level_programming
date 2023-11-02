@@ -15,21 +15,24 @@ int is_positive_integer(char *str)
 	return 1;
 }
 
-int multiply_numbers(int num1, int num2)
+int multiply_numbers(int num1, int num2) 
 {
 	return num1 * num2;
 }
 
 int main(int argc, char *argv[])
 {
+	char *num1_str, *num2_str;
+	int num1, num2;
+
 	if (argc != 3)
 	{
 	printf("Error\n");
 	return 98;
-	}	
+	}
 
-	char *num1_str = argv[1];
-	char *num2_str = argv[2];
+	num1_str = argv[1];
+	num2_str = argv[2];
 
 	if (!is_positive_integer(num1_str) || !is_positive_integer(num2_str))
 	{
@@ -37,8 +40,8 @@ int main(int argc, char *argv[])
 	return 98;
 	}
 
-	int num1 = atoi(num1_str);
-	int num2 = atoi(num2_str);
+	num1 = atoi(num1_str);
+	num2 = atoi(num2_str);
 
 	int result = multiply_numbers(num1, num2);
 	printf("%d\n", result);
