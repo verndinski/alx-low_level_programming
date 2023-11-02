@@ -2,6 +2,14 @@
 #include <stdlib.h>
 #include "main.h"
 
+/**
+ * The main function is the entry point of the program.
+ *
+ * @param argc The number of command-line arguments.
+ * @param argv An array of strings representing the command-line arguments.
+ * @return The exit status of the program.
+ */
+
 int main(int argc, char *argv[])
 {
 	char *num1_str, *num2_str;
