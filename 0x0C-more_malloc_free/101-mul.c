@@ -1,6 +1,6 @@
 #include <stdio.h>
 #include <stdlib.h>
-#include <ctype.h>
+#include "main.h"
 
 int main(int argc, char *argv[])
 {
@@ -16,7 +16,7 @@ int main(int argc, char *argv[])
 
 	num1_str = argv[1];
 	num2_str = argv[2];
-	if (!is_positive_integer(num1_str) || !is_positive_integer(num2_str))	
+	if (!is_positive_integer(num1_str) || !is_positive_integer(num2_str))
 	{
 	printf("Error\n");
 	return (98);
