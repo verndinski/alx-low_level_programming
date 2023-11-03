@@ -16,7 +16,7 @@ int main(int argc, char *argv[])
 	if (argc != 3)
 	{
 	printf("Error\n");
-	return 98;
+	return (98);
 	}
 
 	num1_str = argv[1];
@@ -27,7 +27,7 @@ int main(int argc, char *argv[])
 	if (!is_digit(num1_str[i]))
 	{
 	printf("Error\n");
-	return 98;
+	return (98);
 	}
 	}
 
@@ -36,7 +36,7 @@ int main(int argc, char *argv[])
 	if (!is_Fdigit(num2_str[i]))
 	{
 	printf("Error\n");
-	return 98;
+	return (98);
 	}
 	}
 
@@ -47,5 +47,5 @@ int main(int argc, char *argv[])
 
 	printf("%ld\n", result);
 
-	return 0;
+	return (0);
 }
