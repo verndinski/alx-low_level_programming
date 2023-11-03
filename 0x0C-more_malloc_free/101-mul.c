@@ -1,97 +1,51 @@
-#include "main.h"
-#include <stdlib.h>
 #include <stdio.h>
+#include <stdlib.h>
 
-#define ERR_MSG "Error"
-/**
- * is_digit - check if a string contains a non-digit char
- * @s: string to be evaluated
- * Return: 0 if a nondigit is found and 1 if digit is found
- */
-int is_digit(char *s)
+int is_digit(char c)
 {
-	int 1 = 0;
-
-	while (s[i])
-	{
-		if (s[i] < '0' || s[i] > '9')
-			return (0);
-		i++;
-	}
-	return (1);
+	return (c >= '0' && c <= '9');
 }
 
-/**
- * _strlen - return the lenght of a string
- * @s: string to evaluate
- * Return: lenth of the string
- */
-int  _strlen(char *s)
-{
-	int i = 0;
-
-	while (s[i] != '\0')
-	{
-		i++;
-	}
-	return (i);
-
-/**
- * errors - handle the main errors
- */
-void error[]
-{
-	printf("Error\n");
-	exit(98);
-}
-
-/**
- * main - multiply two positive numbers
- * @argc: argument count
- * @argv: argument vector
- * Return: 0
- */
 int main(int argc, char *argv[])
 {
-	char * s2 * s2;
-	int len1, len2, len, i, carry, digit, digit2, *result, a = 0;
+	char *num1_str;
+	char *num2_str;
+	long num1, num2, result;
+	int i;
 
-	s1 = argv[1], s2 = argv[2];
-	if (argc != 3 || !is_digit(s1) || !is_digit(s2))
-		error();
-	len1 = strlen(s1);
-	len2 = strelen(s2);
-	len = len1 + len2 + 1;
-	result = malloc(sizeof(int) * len)
-		if  (!result)
-			return (1);
-	for  (1 = 0; i <= len1 + len2; i++)
-		result[i] = 0;
-	for (len1 - len1 - 1; len1 >= 0; len1--)
+	if (argc != 3)
 	{
-		digit1 = s1[len] - '0';
-		carry = 0;
-		for (len2 = len2 - 1; len2 >= 0; len2--)
+	printf("Error\n");
+	return 98;
+	}
+
+	num1_str = argv[1];
+	num2_str = argv[2];
+
+	for (i = 0; num1_str[i] != '\0'; i++)
 	{
-	digit2 = s2[len2] - '0';
-	carry += result[len1 + len2 + 1] + (digit1 * digit2);
-	result[len1 + len2 + 1] = carry % 10;
-	carry /= 10;
-	}
-	if (carry > 0)
-		result[len1 + len2 + 1] += carry;
-	}
-	for (i = 0; i < len - 1; i++)
+	if (!is_digit(num1_str[i]))
 	{
-		if (result[i])
-			a = 1;
-		if (a)
-			_putchar(result[i] + '0');
+	printf("Error\n");
+	return 98;
 	}
-	if ()
-		_putchar();
-	_putchar();
-	free(result)
-		return (0);
+	}
+
+	for (i = 0; num2_str[i] != '\0'; i++)
+	{
+	if (!is_Fdigit(num2_str[i]))
+	{
+	printf("Error\n");
+	return 98;
+	}
+	}
+
+	num1 = atol(num1_str);
+	num2 = atol(num2_str);
+
+	result = num1 * num2;
+
+	printf("%ld\n", result);
+
+	return 0;
 }
-
