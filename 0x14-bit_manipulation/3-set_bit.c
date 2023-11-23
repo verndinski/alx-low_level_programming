@@ -1,32 +1,17 @@
-#include <stdio.h>
-#include <stdlib.h>
-
-unsigned int binary_to_uint(const char *b)
+#include "main.h"
+/**
+ * set_bit - set the bit of a number to 1
+ *
+ * @n: pointer to thebit to be manipulated
+ */
+int set_bit(unsigned long int *n, unsigned int index)
 {
-	if (b == NULL)
-	return 0;
+	unsigned int mask;
 
-	unsigned int result = 0;
-	while (*b != '\0') 
-	{
-	if (*b != '0' && *b != '1') 
-	{
-	// Invalid character found, return 0
-	return 0;
-	}
-	result = result * 2 + (*b - '0');
-	b++;
-	}
-	return result;
+	if  (index > sizeof(unsigned int) *8)
+		return (-1);
+	mask = 1;
+	mask = mask << index;
+	*n = ((*n) | mask);
+	return (1);
 }
-
-int main()
-{
-	const char *binary = "101010"; // Example binary string
-
-	unsigned int result = binary_to_uint(binary);
-	printf("Converted binary to uint: %u\n", result);
-
-	return 0;
-}
-
