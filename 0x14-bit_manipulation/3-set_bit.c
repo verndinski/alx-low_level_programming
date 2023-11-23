@@ -1,21 +1,32 @@
-#include "main.h"
+#include <stdio.h>
+#include <stdlib.h>
 
-/**
- * set_bit - sets value of a bit to 1 at a given index
- * @n: decimal number passed by pointer
- * @index: index position to change, starting from 0
- * Return: 1 if it worked, -1 if error
- */
-int set_bit(unsigned long int *n, unsigned int index)
+unsigned int binary_to_uint(const char *b)
 {
-	unsigned long int p;
+	if (b == NULL)
+	return 0;
 
-	if (index > 64)
-		return (-1);
-
-	for (p = 1; index > 0; index--, p *= 2)
-		;
-	*n += p;
-
-	return (1);
+	unsigned int result = 0;
+	while (*b != '\0') 
+	{
+	if (*b != '0' && *b != '1') 
+	{
+	// Invalid character found, return 0
+	return 0;
+	}
+	result = result * 2 + (*b - '0');
+	b++;
+	}
+	return result;
 }
+
+int main()
+{
+	const char *binary = "101010"; // Example binary string
+
+	unsigned int result = binary_to_uint(binary);
+	printf("Converted binary to uint: %u\n", result);
+
+	return 0;
+}
+
